@@ -1,10 +1,3 @@
-//dateNewYear = (day, month, year) =>{
-//  const start = new Date(year, month, day);
-//const end = new Date(year,`December`, 31);
-//return (end - start)/60/60/24/1000;
-//};
-
-
 const dateNewYear = (day, month, year) => {
     let monthYear = {
         'января': '1', 'февраля': '2', 'марта': '3', 'апреля': '4',
@@ -18,7 +11,7 @@ const dateNewYear = (day, month, year) => {
     }
     month = monthYear[month];
     amountDays[month] = amountDays[month] - day;
-    amountDays = amountDays.slice(amountDays[month]);
+    amountDays = amountDays.slice(month);
 
     return amountDays.reduce(function (sum, current) {
         return sum + current;
